@@ -217,7 +217,15 @@ export default function App() {
             <Button
               color="primary"
               component="a"
-              href="#contato"
+              href="#quem-somos"
+              sx={{ fontWeight: 500 }}
+            >
+              Quem Somos
+            </Button>
+            <Button
+              color="primary"
+              component="a"
+              href="#quem-somos"
               sx={{ fontWeight: 500 }}
             >
               Contato
