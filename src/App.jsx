@@ -24,6 +24,14 @@ import SendIcon from "@mui/icons-material/Send";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import CalculateIcon from "@mui/icons-material/Calculate";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ComputerIcon from "@mui/icons-material/Computer";
+import PersonIcon from "@mui/icons-material/Person";
 
 // --- Card animado com framer-motion ---
 function HoverCard({ icon, title, desc, direction = "up", delay = 0 }) {
@@ -83,11 +91,11 @@ export default function App() {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     arrows: false,
   };
 
@@ -150,6 +158,9 @@ export default function App() {
     }, 1500); // Simulação de envio
   };
 
+  // Caminho base para imagens públicas (corrige para o GitHub Pages)
+  const img = (file) => `./${file}`;
+
   return (
     <>
       {/* Menu fixo */}
@@ -165,7 +176,7 @@ export default function App() {
             }}
           >
             <img
-              src="/logo_meuzapgestor_robo.png"
+              src={img("logo_meuzapgestor_robo.png")}
               alt="Logo MeuZapGestor"
               style={{
                 height: 38,
@@ -216,11 +227,10 @@ export default function App() {
       {/* Espaçamento pro menu fixo */}
       <Box sx={{ pt: { xs: 10, md: 12 } }} />
 
-      {/* Carrossel */}
+      {/* Carrossel - Novo */}
       <Box
         sx={{
           width: "100vw",
-          height: "320px",
           bgcolor: "#edf2fa",
           overflow: "hidden",
           p: 0,
@@ -228,33 +238,216 @@ export default function App() {
         }}
       >
         <Slider {...sliderSettings}>
-          {[1, 2, 3].map((num) => (
-            <Box
-              key={num}
-              sx={{
-                width: "100vw",
-                height: "320px",
-                p: 0,
-                m: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden",
-                bgcolor: "#edf2fa",
-              }}
+          {/* Banner 1: Estatística */}
+          <Paper
+            sx={{
+              width: "100vw",
+              height: { xs: 320, md: 340 },
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "#f8fbff",
+              borderRadius: 0,
+              boxShadow: "none",
+              p: { xs: 1, md: 4 },
+            }}
+          >
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
             >
-              <img
-                src={`/banner${num}.png`}
-                alt={`Banner ${num}`}
-                style={{
-                  width: "100vw",
-                  height: "320px",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
-            </Box>
-          ))}
+              <TrendingUpIcon sx={{ fontSize: 64, color: "#1e88e5", mb: 1 }} />
+              <Typography
+                variant="h3"
+                fontWeight={700}
+                color="#1976d2"
+                sx={{ mb: -1 }}
+              >
+                +15 Milhões
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                color="text.secondary"
+                sx={{ mb: 2 }}
+              >
+                de negócios usam o WhatsApp
+              </Typography>
+              <Typography variant="body1" fontWeight={700}>
+                Estatísticas:
+                <Typography component="span" fontWeight={400} color="#1976d2">
+                  {" "}
+                  Micro, Pequenos e Médios Empreendedores usam o WhatsApp como
+                  principal ferramenta no Brasil.
+                </Typography>
+              </Typography>
+            </Grid>
+          </Paper>
+
+          {/* Banner 2: Benefícios */}
+          <Paper
+            sx={{
+              width: "100vw",
+              height: { xs: 320, md: 340 },
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "#f8fbff",
+              borderRadius: 0,
+              boxShadow: "none",
+              p: { xs: 1, md: 4 },
+            }}
+          >
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Typography
+                variant="h5"
+                fontWeight={700}
+                color="#1976d2"
+                textAlign="center"
+                sx={{ mb: 3, px: 2 }}
+              >
+                Economize tempo e dinheiro centralizando tudo no WhatsApp
+              </Typography>
+              <Grid
+                container
+                spacing={4}
+                justifyContent="center"
+                alignItems="flex-start"
+                sx={{ width: "100%" }}
+              >
+                <Grid item xs={12} md={4} textAlign="center">
+                  <WhatsAppIcon
+                    sx={{ fontSize: 54, color: "#43d854", mb: 1 }}
+                  />
+                  <Typography variant="body1" fontWeight={500}>
+                    Atendimento, pedidos
+                    <br />e pós-venda direto no WhatsApp!
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} md={4} textAlign="center">
+                  <CalculateIcon
+                    sx={{ fontSize: 54, color: "#1976d2", mb: 1 }}
+                  />
+                  <Typography variant="body1" fontWeight={500}>
+                    Controle financeiro e<br />
+                    relatórios automáticos!
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} md={4} textAlign="center">
+                  <AttachMoneyIcon
+                    sx={{ fontSize: 54, color: "#29b6f6", mb: 1 }}
+                  />
+                  <Typography variant="body1" fontWeight={500}>
+                    Sem custo de várias
+                    <br />
+                    ferramentas diferentes!
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Paper>
+
+          {/* Banner 3: Como funciona */}
+          <Paper
+            sx={{
+              width: "100vw",
+              height: { xs: 320, md: 340 },
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "#f8fbff",
+              borderRadius: 0,
+              boxShadow: "none",
+              p: { xs: 1, md: 4 },
+            }}
+          >
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              sx={{ width: "100%" }}
+            >
+              <Typography
+                variant="h5"
+                fontWeight={700}
+                color="#0c3585"
+                sx={{ mb: 4, textAlign: "center" }}
+              >
+                Como funciona o MeuZapGestor?!
+              </Typography>
+              <Grid
+                container
+                alignItems="center"
+                justifyContent="center"
+                spacing={1}
+              >
+                <Grid item>
+                  <Box textAlign="center">
+                    <WhatsAppIcon sx={{ fontSize: 48, color: "#43d854" }} />
+                    <Typography fontSize={16} fontWeight={500} sx={{ mt: 0.5 }}>
+                      Cliente manda
+                      <br />
+                      mensagem no
+                      <br />
+                      WhatsApp
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item>
+                  <ArrowForwardIosIcon
+                    sx={{ color: "#1976d2", fontSize: 30 }}
+                  />
+                </Grid>
+                <Grid item>
+                  <Box textAlign="center">
+                    <ComputerIcon sx={{ fontSize: 48, color: "#1976d2" }} />
+                    <Typography fontSize={16} fontWeight={500} sx={{ mt: 0.5 }}>
+                      Pedido cai
+                      <br />
+                      no sistema
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item>
+                  <ArrowForwardIosIcon
+                    sx={{ color: "#1976d2", fontSize: 30 }}
+                  />
+                </Grid>
+                <Grid item>
+                  <Box textAlign="center">
+                    <PersonIcon sx={{ fontSize: 48, color: "#1976d2" }} />
+                    <Typography fontSize={16} fontWeight={500} sx={{ mt: 0.5 }}>
+                      Você gerencia
+                      <br />
+                      tudo pelo painel
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item>
+                  <ArrowForwardIosIcon
+                    sx={{ color: "#1976d2", fontSize: 30 }}
+                  />
+                </Grid>
+                <Grid item>
+                  <Box textAlign="center">
+                    <CheckCircleIcon sx={{ fontSize: 48, color: "#43d854" }} />
+                    <Typography fontSize={16} fontWeight={500} sx={{ mt: 0.5 }}>
+                      Mais organização,
+                      <br />
+                      menos bagunça!
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Paper>
         </Slider>
       </Box>
 
@@ -444,66 +637,11 @@ export default function App() {
             >
               Fale com a gente!
             </Typography>
-            <form onSubmit={handleContatoSubmit}>
-              <TextField
-                label="Nome"
-                name="nome"
-                value={contato.nome}
-                onChange={handleContatoChange}
-                required
-                fullWidth
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                label="E-mail"
-                name="email"
-                value={contato.email}
-                onChange={handleContatoChange}
-                type="email"
-                required
-                fullWidth
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                label="Telefone"
-                name="telefone"
-                value={contato.telefone}
-                onChange={handleContatoChange}
-                fullWidth
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                label="Mensagem"
-                name="mensagem"
-                value={contato.mensagem}
-                onChange={handleContatoChange}
-                multiline
-                minRows={3}
-                required
-                fullWidth
-                sx={{ mb: 2 }}
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                endIcon={<SendIcon />}
-                disabled={enviando}
-                sx={{ width: "100%", py: 1, fontWeight: "bold", fontSize: 17 }}
-              >
-                {enviando ? "Enviando..." : "Enviar"}
-              </Button>
-              {enviado && (
-                <Alert severity="success" sx={{ mt: 2 }}>
-                  Mensagem enviada! Em breve retornamos 😉
-                </Alert>
-              )}
-            </form>
+            <ContactForm />
           </Paper>
         </Container>
       </Box>
 
-      {/* Rodapé */}
       {/* Rodapé */}
       <Box
         component="footer"
@@ -537,7 +675,7 @@ export default function App() {
                 }}
               >
                 <img
-                  src="/logo_meuzapgestor_robo.png"
+                  src={img("logo_meuzapgestor_robo.png")}
                   alt="Logo"
                   style={{ height: 60, marginRight: 20 }}
                 />
@@ -637,7 +775,7 @@ export default function App() {
             >
               <IconButton
                 component="a"
-                href="https://instagram.com/meuzapgestor" // Troque pelo seu Instagram real
+                href="https://instagram.com/meuzapgestor"
                 target="_blank"
                 rel="noopener"
                 sx={{
@@ -665,5 +803,115 @@ export default function App() {
         </Container>
       </Box>
     </>
+  );
+}
+
+function ContactForm() {
+  const [values, setValues] = React.useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    mensagem: "",
+  });
+  const [enviando, setEnviando] = React.useState(false);
+  const [enviado, setEnviado] = React.useState(false);
+  const [erro, setErro] = React.useState("");
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setEnviando(true);
+    setErro("");
+    try {
+      const formData = new FormData();
+      for (const key in values) formData.append(key, values[key]);
+      const response = await fetch("https://formspree.io/f/xzzvewqd", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        setEnviado(true);
+        setValues({
+          nome: "",
+          email: "",
+          telefone: "",
+          mensagem: "",
+        });
+        setTimeout(() => setEnviado(false), 4000);
+      } else {
+        setErro("Erro ao enviar mensagem. Tente novamente.");
+      }
+    } catch {
+      setErro("Erro ao enviar mensagem. Tente novamente.");
+    } finally {
+      setEnviando(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <TextField
+        label="Nome"
+        name="nome"
+        value={values.nome}
+        onChange={handleChange}
+        required
+        fullWidth
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label="E-mail"
+        name="email"
+        value={values.email}
+        onChange={handleChange}
+        type="email"
+        required
+        fullWidth
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label="Telefone"
+        name="telefone"
+        value={values.telefone}
+        onChange={handleChange}
+        fullWidth
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label="Mensagem"
+        name="mensagem"
+        value={values.mensagem}
+        onChange={handleChange}
+        multiline
+        minRows={3}
+        required
+        fullWidth
+        sx={{ mb: 2 }}
+      />
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        endIcon={<SendIcon />}
+        disabled={enviando}
+        sx={{ width: "100%", py: 1, fontWeight: "bold", fontSize: 17 }}
+      >
+        {enviando ? "Enviando..." : "Enviar"}
+      </Button>
+      {enviado && (
+        <Alert severity="success" sx={{ mt: 2 }}>
+          Mensagem enviada! Em breve retornamos 😉
+        </Alert>
+      )}
+      {erro && (
+        <Alert severity="error" sx={{ mt: 2 }}>
+          {erro}
+        </Alert>
+      )}
+    </form>
   );
 }
