@@ -649,7 +649,7 @@ export default function App() {
                 }}
               >
                 <Avatar
-                  src="/foto_joao.png"
+                  src="joao_avatar.png"
                   sx={{
                     width: 90,
                     height: 90,
@@ -713,7 +713,7 @@ export default function App() {
                 }}
               >
                 <Avatar
-                  src="/foto_cleverson.png"
+                  src="cleverson_avatar.png"
                   sx={{
                     width: 90,
                     height: 90,
@@ -726,7 +726,7 @@ export default function App() {
                 </Avatar>
                 <CardContent sx={{ p: 0, flex: 1 }}>
                   <Typography variant="h6" fontWeight="bold">
-                    Cleverson Silva
+                    Cleverson Teodoro
                   </Typography>
                   <Typography
                     variant="body2"
