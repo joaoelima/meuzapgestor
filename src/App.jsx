@@ -245,7 +245,7 @@ export default function App() {
               target="_blank"
               rel="noopener"
             >
-              Escritório do Cliente
+              Área do Cliente
             </Button>
           </Stack>
         </Toolbar>
