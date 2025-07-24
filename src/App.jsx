@@ -230,6 +230,23 @@ export default function App() {
             >
               Contato
             </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                fontWeight: 700,
+                borderRadius: 99,
+                px: 3,
+                boxShadow: 2,
+                ml: 1,
+                fontSize: 17,
+              }}
+              href="https://lavacar-front.onrender.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Escritório do Cliente
+            </Button>
           </Stack>
         </Toolbar>
       </AppBar>
