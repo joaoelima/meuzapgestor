@@ -32,6 +32,8 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ComputerIcon from "@mui/icons-material/Computer";
 import PersonIcon from "@mui/icons-material/Person";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Card, CardContent, Avatar } from "@mui/material";
 
 // --- Card animado com framer-motion ---
 function HoverCard({ icon, title, desc, direction = "up", delay = 0 }) {
@@ -223,10 +225,8 @@ export default function App() {
           </Stack>
         </Toolbar>
       </AppBar>
-
       {/* Espaçamento pro menu fixo */}
       <Box sx={{ pt: { xs: 10, md: 12 } }} />
-
       {/* Carrossel - Novo */}
       <Box
         sx={{
@@ -450,7 +450,6 @@ export default function App() {
           </Paper>
         </Slider>
       </Box>
-
       {/* Hero */}
       <Box
         sx={{
@@ -498,7 +497,6 @@ export default function App() {
           </Button>
         </Container>
       </Box>
-
       {/* Cards de Benefícios 2x2 centralizado */}
       <Box id="beneficios" sx={{ py: 8, bgcolor: "#f6f8fc" }}>
         <Container>
@@ -525,7 +523,6 @@ export default function App() {
           </Grid>
         </Container>
       </Box>
-
       {/* Box sobre */}
       <Box id="sobre" sx={{ py: 8, bgcolor: "#f6f8fc" }}>
         <Container>
@@ -561,7 +558,6 @@ export default function App() {
           </Typography>
         </Container>
       </Box>
-
       {/* Como funciona (3 em linha) */}
       <Box id="como-funciona" sx={{ py: 8 }}>
         <Container>
@@ -623,6 +619,154 @@ export default function App() {
           </Grid>
         </Container>
       </Box>
+      <Box id="quem-somos" sx={{ py: 8, bgcolor: "#eaf1fd" }}>
+        <Container>
+          <Typography
+            variant="h4"
+            color="primary"
+            fontWeight="bold"
+            align="center"
+            gutterBottom
+          >
+            Quem Somos
+          </Typography>
+          <Grid
+            container
+            spacing={6}
+            alignItems="center"
+            justifyContent="center"
+          >
+            {/* João */}
+            <Grid item xs={12} md={5}>
+              <Card
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  borderRadius: 4,
+                  boxShadow: 3,
+                  p: 3,
+                  bgcolor: "#fff",
+                }}
+              >
+                <Avatar
+                  src="/foto_joao.png"
+                  sx={{
+                    width: 90,
+                    height: 90,
+                    fontSize: 40,
+                    bgcolor: "#1e3a8a",
+                    mr: 3,
+                  }}
+                >
+                  JL
+                </Avatar>
+                <CardContent sx={{ p: 0, flex: 1 }}>
+                  <Typography variant="h6" fontWeight="bold">
+                    João Eduardo Lima
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="primary"
+                    fontWeight="bold"
+                    sx={{ mb: 1 }}
+                  >
+                    Co-fundador & Dev
+                  </Typography>
+                  <Typography color="text.secondary" sx={{ mb: 1 }}>
+                    Apaixonado por tecnologia, desenvolvimento web e inovação.
+                    Responsável pela criação e evolução do MeuZapGestor, sempre
+                    pensando na experiência do cliente e em soluções práticas
+                    para pequenos negócios.
+                  </Typography>
+                  <IconButton
+                    component="a"
+                    href="https://www.linkedin.com/in/joaoeduardolima/" // Troque para seu LinkedIn real!
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      color: "#0a66c2",
+                      bgcolor: "#eaf1fd",
+                      borderRadius: "12px",
+                      px: 1.5,
+                      py: 1,
+                      "&:hover": { bgcolor: "#d0e5fc" },
+                    }}
+                  >
+                    <LinkedInIcon fontSize="medium" sx={{ mr: 1 }} />
+                    <Typography variant="body2" fontWeight={500}>
+                      LinkedIn
+                    </Typography>
+                  </IconButton>
+                </CardContent>
+              </Card>
+            </Grid>
+            {/* Cleverson */}
+            <Grid item xs={12} md={5}>
+              <Card
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  borderRadius: 4,
+                  boxShadow: 3,
+                  p: 3,
+                  bgcolor: "#fff",
+                }}
+              >
+                <Avatar
+                  src="/foto_cleverson.png"
+                  sx={{
+                    width: 90,
+                    height: 90,
+                    fontSize: 40,
+                    bgcolor: "#3b82f6",
+                    mr: 3,
+                  }}
+                >
+                  CL
+                </Avatar>
+                <CardContent sx={{ p: 0, flex: 1 }}>
+                  <Typography variant="h6" fontWeight="bold">
+                    Cleverson Silva
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="primary"
+                    fontWeight="bold"
+                    sx={{ mb: 1 }}
+                  >
+                    Co-fundador & Negócios
+                  </Typography>
+                  <Typography color="text.secondary" sx={{ mb: 1 }}>
+                    Parceiro de jornada, apaixonado por empreendedorismo e
+                    atendimento. Focado em entender a dor do cliente, criar
+                    soluções simples e levar tecnologia para todo mundo de forma
+                    acessível e eficiente.
+                  </Typography>
+                  <IconButton
+                    component="a"
+                    href="https://www.linkedin.com/in/cleversonteodoroproducaoindustrial/" // Troque para o LinkedIn real dele!
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      color: "#0a66c2",
+                      bgcolor: "#eaf1fd",
+                      borderRadius: "12px",
+                      px: 1.5,
+                      py: 1,
+                      "&:hover": { bgcolor: "#d0e5fc" },
+                    }}
+                  >
+                    <LinkedInIcon fontSize="medium" sx={{ mr: 1 }} />
+                    <Typography variant="body2" fontWeight={500}>
+                      LinkedIn
+                    </Typography>
+                  </IconButton>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
 
       {/* Área de Contato */}
       <Box id="contato" sx={{ py: 8, bgcolor: "#f6f8fc" }}>
@@ -641,7 +785,6 @@ export default function App() {
           </Paper>
         </Container>
       </Box>
-
       {/* Rodapé */}
       <Box
         component="footer"
