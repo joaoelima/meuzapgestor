@@ -682,9 +682,9 @@ export default function App() {
                   </Typography>
                   <Typography color="text.secondary" sx={{ mb: 1 }}>
                     Apaixonado por tecnologia, desenvolvimento web e inovação.
-                    Responsável pela criação e evolução do MeuZapGestor, sempre
-                    pensando na experiência do cliente e em soluções práticas
-                    para pequenos negócios.
+                    Responsável pelo desenvolvimento da plataforma do
+                    MeuZapGestor, sempre pensando na experiência do cliente e em
+                    soluções práticas para pequenos negócios.
                   </Typography>
                   <IconButton
                     component="a"
