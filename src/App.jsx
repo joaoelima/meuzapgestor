@@ -999,6 +999,26 @@ export default function App() {
               >
                 <InstagramIcon fontSize="large" />
               </IconButton>
+
+              {/* LinkedIn */}
+              <IconButton
+                component="a"
+                href="https://www.linkedin.com/in/joaoeduardolima/" // coloque o link desejado
+                target="_blank"
+                rel="noopener"
+                sx={{
+                  color: "#fff",
+                  bgcolor: "#0a66c2",
+                  "&:hover": { bgcolor: "#004182" },
+                  width: 50,
+                  height: 50,
+                  borderRadius: "50%",
+                  boxShadow: 2,
+                  ml: 2, // se quiser dar um espaçamento do Instagram
+                }}
+              >
+                <LinkedInIcon fontSize="large" />
+              </IconButton>
             </Grid>
           </Grid>
           <Box sx={{ textAlign: "center", mt: 6, color: "#b8c3db" }}>
