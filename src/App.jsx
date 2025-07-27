@@ -1003,7 +1003,7 @@ export default function App() {
               {/* LinkedIn */}
               <IconButton
                 component="a"
-                href="https://www.linkedin.com/in/joaoeduardolima/" // coloque o link desejado
+                href="https://www.linkedin.com/company/meuzapgestor"
                 target="_blank"
                 rel="noopener"
                 sx={{
