@@ -36,6 +36,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ComputerIcon from "@mui/icons-material/Computer";
 import PersonIcon from "@mui/icons-material/Person";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookIcon from "@mui/icons-material/Facebook";
 
 // --- Card animado genérico ---
 function AnimatedCard({ children, delay = 0, direction = "up" }) {
@@ -1018,6 +1019,26 @@ export default function App() {
                 }}
               >
                 <LinkedInIcon fontSize="large" />
+              </IconButton>
+
+              {/* Facebook */}
+              <IconButton
+                component="a"
+                href="https://www.facebook.com/profile.php?id=61578367035425"
+                target="_blank"
+                rel="noopener"
+                sx={{
+                  color: "#fff",
+                  bgcolor: "#0a66c2",
+                  "&:hover": { bgcolor: "#004182" },
+                  width: 50,
+                  height: 50,
+                  borderRadius: "50%",
+                  boxShadow: 2,
+                  ml: 2, // se quiser dar um espaçamento do Instagram
+                }}
+              >
+                <FacebookIcon fontSize="large" />
               </IconButton>
             </Grid>
           </Grid>
