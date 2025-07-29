@@ -955,21 +955,7 @@ export default function App() {
                 href="#faq"
                 sx={{ color: "#dde4fc", display: "block", mb: 0.5 }}
               >
-                FAQ
-              </Typography>
-              <Typography
-                component="a"
-                href="#telefones"
-                sx={{ color: "#dde4fc", display: "block", mb: 0.5 }}
-              >
-                Telefones
-              </Typography>
-              <Typography
-                component="a"
-                href="#chat"
-                sx={{ color: "#dde4fc", display: "block" }}
-              >
-                Chat
+                suporte@meuzapgestor.com.br
               </Typography>
             </Grid>
             {/* Instagram */}
